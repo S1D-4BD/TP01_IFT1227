@@ -1,0 +1,207 @@
+|guirlandes_controller
+led7 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+C => inst3.IN0
+C => inst6.IN0
+C => mux8:inst.sel[2]
+C => decodeur3x8:inst14.data[2]
+C => inst21.IN0
+C => mux4:inst13.data0
+B => inst3.IN1
+B => inst9.IN0
+B => mux8:inst.sel[1]
+B => decodeur3x8:inst14.data[1]
+B => mux4:inst13.sel[1]
+A => inst5.IN0
+A => mux8:inst.sel[0]
+A => decodeur3x8:inst14.data[0]
+A => mux4:inst13.sel[0]
+led6 <= mux8:inst.result
+led1 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+led2 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+led3 <= decodeur3x8:inst14.eq3
+led4 <= decodeur3x8:inst14.eq3
+led5 <= mux4:inst13.result
+led0 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|guirlandes_controller|mux8:inst
+data0 => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data1 => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data2 => LPM_MUX:LPM_MUX_component.DATA[2][0]
+data3 => LPM_MUX:LPM_MUX_component.DATA[3][0]
+data4 => LPM_MUX:LPM_MUX_component.DATA[4][0]
+data5 => LPM_MUX:LPM_MUX_component.DATA[5][0]
+data6 => LPM_MUX:LPM_MUX_component.DATA[6][0]
+data7 => LPM_MUX:LPM_MUX_component.DATA[7][0]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+sel[2] => LPM_MUX:LPM_MUX_component.SEL[2]
+result <= LPM_MUX:LPM_MUX_component.RESULT[0]
+
+
+|guirlandes_controller|mux8:inst|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_gid:auto_generated.data[0]
+data[1][0] => mux_gid:auto_generated.data[1]
+data[2][0] => mux_gid:auto_generated.data[2]
+data[3][0] => mux_gid:auto_generated.data[3]
+data[4][0] => mux_gid:auto_generated.data[4]
+data[5][0] => mux_gid:auto_generated.data[5]
+data[6][0] => mux_gid:auto_generated.data[6]
+data[7][0] => mux_gid:auto_generated.data[7]
+sel[0] => mux_gid:auto_generated.sel[0]
+sel[1] => mux_gid:auto_generated.sel[1]
+sel[2] => mux_gid:auto_generated.sel[2]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_gid:auto_generated.result[0]
+
+
+|guirlandes_controller|mux8:inst|LPM_MUX:LPM_MUX_component|mux_gid:auto_generated
+data[0] => _.IN0
+data[0] => _.IN0
+data[1] => _.IN0
+data[2] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN0
+data[4] => _.IN0
+data[4] => _.IN0
+data[5] => _.IN0
+data[6] => _.IN1
+data[6] => _.IN1
+data[7] => _.IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[2] => result_node[0].IN0
+sel[2] => _.IN0
+
+
+|guirlandes_controller|decodeur3x8:inst14
+data[0] => data[0].IN1
+data[1] => data[1].IN1
+data[2] => data[2].IN1
+eq0 <= lpm_decode:LPM_DECODE_component.eq
+eq1 <= lpm_decode:LPM_DECODE_component.eq
+eq2 <= lpm_decode:LPM_DECODE_component.eq
+eq3 <= lpm_decode:LPM_DECODE_component.eq
+eq4 <= lpm_decode:LPM_DECODE_component.eq
+eq5 <= lpm_decode:LPM_DECODE_component.eq
+eq6 <= lpm_decode:LPM_DECODE_component.eq
+eq7 <= lpm_decode:LPM_DECODE_component.eq
+
+
+|guirlandes_controller|decodeur3x8:inst14|lpm_decode:LPM_DECODE_component
+data[0] => decode_4me:auto_generated.data[0]
+data[1] => decode_4me:auto_generated.data[1]
+data[2] => decode_4me:auto_generated.data[2]
+enable => ~NO_FANOUT~
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+eq[0] <= decode_4me:auto_generated.eq[0]
+eq[1] <= decode_4me:auto_generated.eq[1]
+eq[2] <= decode_4me:auto_generated.eq[2]
+eq[3] <= decode_4me:auto_generated.eq[3]
+eq[4] <= decode_4me:auto_generated.eq[4]
+eq[5] <= decode_4me:auto_generated.eq[5]
+eq[6] <= decode_4me:auto_generated.eq[6]
+eq[7] <= decode_4me:auto_generated.eq[7]
+
+
+|guirlandes_controller|decodeur3x8:inst14|lpm_decode:LPM_DECODE_component|decode_4me:auto_generated
+data[0] => w_anode19w[1].IN1
+data[0] => w_anode1w[1].IN0
+data[0] => w_anode30w[1].IN0
+data[0] => w_anode41w[1].IN1
+data[0] => w_anode52w[1].IN0
+data[0] => w_anode63w[1].IN1
+data[0] => w_anode74w[1].IN0
+data[0] => w_anode85w[1].IN1
+data[1] => w_anode19w[2].IN0
+data[1] => w_anode1w[2].IN0
+data[1] => w_anode30w[2].IN1
+data[1] => w_anode41w[2].IN1
+data[1] => w_anode52w[2].IN0
+data[1] => w_anode63w[2].IN0
+data[1] => w_anode74w[2].IN1
+data[1] => w_anode85w[2].IN1
+data[2] => w_anode19w[3].IN0
+data[2] => w_anode1w[3].IN0
+data[2] => w_anode30w[3].IN0
+data[2] => w_anode41w[3].IN0
+data[2] => w_anode52w[3].IN1
+data[2] => w_anode63w[3].IN1
+data[2] => w_anode74w[3].IN1
+data[2] => w_anode85w[3].IN1
+eq[0] <= w_anode1w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[1] <= w_anode19w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[2] <= w_anode30w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[3] <= w_anode41w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[4] <= w_anode52w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[5] <= w_anode63w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[6] <= w_anode74w[3].DB_MAX_OUTPUT_PORT_TYPE
+eq[7] <= w_anode85w[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|guirlandes_controller|mux4:inst13
+data0 => LPM_MUX:LPM_MUX_component.DATA[0][0]
+data1 => LPM_MUX:LPM_MUX_component.DATA[1][0]
+data2 => LPM_MUX:LPM_MUX_component.DATA[2][0]
+data3 => LPM_MUX:LPM_MUX_component.DATA[3][0]
+sel[0] => LPM_MUX:LPM_MUX_component.SEL[0]
+sel[1] => LPM_MUX:LPM_MUX_component.SEL[1]
+result <= LPM_MUX:LPM_MUX_component.RESULT[0]
+
+
+|guirlandes_controller|mux4:inst13|LPM_MUX:LPM_MUX_component
+data[0][0] => mux_bid:auto_generated.data[0]
+data[1][0] => mux_bid:auto_generated.data[1]
+data[2][0] => mux_bid:auto_generated.data[2]
+data[3][0] => mux_bid:auto_generated.data[3]
+sel[0] => mux_bid:auto_generated.sel[0]
+sel[1] => mux_bid:auto_generated.sel[1]
+clock => ~NO_FANOUT~
+aclr => ~NO_FANOUT~
+clken => ~NO_FANOUT~
+result[0] <= mux_bid:auto_generated.result[0]
+
+
+|guirlandes_controller|mux4:inst13|LPM_MUX:LPM_MUX_component|mux_bid:auto_generated
+data[0] => _.IN0
+data[0] => _.IN0
+data[1] => _.IN0
+data[2] => _.IN1
+data[2] => _.IN1
+data[3] => _.IN0
+result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] => _.IN1
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[0] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+sel[1] => _.IN0
+
+

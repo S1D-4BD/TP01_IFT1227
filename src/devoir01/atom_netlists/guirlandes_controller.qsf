@@ -1,0 +1,48 @@
+set_location_assignment PIN_C10 -to A
+set_location_assignment PIN_C11 -to B
+set_location_assignment PIN_D12 -to C
+set_location_assignment PIN_A8 -to led0
+set_location_assignment PIN_A9 -to led1
+set_location_assignment PIN_A10 -to led2
+set_location_assignment PIN_B10 -to led3
+set_location_assignment PIN_D13 -to led4
+set_location_assignment PIN_C13 -to led5
+set_location_assignment PIN_E14 -to led6
+set_location_assignment PIN_D14 -to led7
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY guirlandes_controller
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:06:51  OCTOBER 05, 2024"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name QIP_FILE decodeur3x8.qip
+set_global_assignment -name IP_TOOL_NAME LPM_DECODE -qip decodeur3x8.qip
+set_global_assignment -name IP_TOOL_VERSION 21.1 -qip decodeur3x8.qip
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{MAX 10\}" -qip decodeur3x8.qip
+set_global_assignment -name VERILOG_FILE decodeur3x8.v -qip decodeur3x8.qip
+set_global_assignment -name MISC_FILE decodeur3x8.bsf -qip decodeur3x8.qip
+set_global_assignment -name MISC_FILE decodeur3x8_bb.v -qip decodeur3x8.qip
+set_global_assignment -name MISC_FILE decodeur3x8.cmp -qip decodeur3x8.qip
+set_global_assignment -name QIP_FILE mux4.qip
+set_global_assignment -name IP_TOOL_NAME LPM_MUX -qip mux4.qip
+set_global_assignment -name IP_TOOL_VERSION 21.1 -qip mux4.qip
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{MAX 10\}" -qip mux4.qip
+set_global_assignment -name VHDL_FILE mux4.vhd -qip mux4.qip
+set_global_assignment -name MISC_FILE mux4.bsf -qip mux4.qip
+set_global_assignment -name MISC_FILE mux4.cmp -qip mux4.qip
+set_global_assignment -name BDF_FILE guirlandes_controller.bdf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name QIP_FILE mux8.qip
+set_global_assignment -name IP_TOOL_NAME LPM_MUX -qip mux8.qip
+set_global_assignment -name IP_TOOL_VERSION 21.1 -qip mux8.qip
+set_global_assignment -name IP_GENERATED_DEVICE_FAMILY "\{MAX 10\}" -qip mux8.qip
+set_global_assignment -name VHDL_FILE mux8.vhd -qip mux8.qip
+set_global_assignment -name MISC_FILE mux8.bsf -qip mux8.qip
+set_global_assignment -name MISC_FILE mux8.cmp -qip mux8.qip
